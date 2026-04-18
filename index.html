@@ -46,6 +46,57 @@
     .btn-primary { background: #f59e0b; color: #1e3a5f; padding: 14px 32px; border-radius: 8px; font-weight: 700; font-size: 16px; }
     .btn-outline { border: 2px solid rgba(255,255,255,0.5); color: #fff; padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 16px; }
 
+    /* Screenshot hero */
+    .hero-screenshot {
+      background: #fff; padding: 48px 40px 0;
+      display: flex; justify-content: center;
+    }
+    .hero-screenshot img {
+      max-width: 900px; width: 100%;
+      border-radius: 12px 12px 0 0;
+      box-shadow: 0 -8px 40px rgba(0,0,0,0.15);
+      display: block;
+    }
+    .hero-screenshot-placeholder {
+      max-width: 900px; width: 100%;
+      height: 420px;
+      background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+      border-radius: 12px 12px 0 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      color: #94a3b8; font-size: 15px; gap: 12px;
+      border: 2px dashed #94a3b8;
+    }
+    .hero-screenshot-placeholder .icon { font-size: 48px; }
+
+    /* Seção com imagem lateral */
+    .split-section { display: flex; align-items: center; gap: 60px; padding: 72px 40px; max-width: 1100px; margin: 0 auto; }
+    .split-section.reverse { flex-direction: row-reverse; }
+    .split-text { flex: 1; }
+    .split-text h2 { font-size: 28px; font-weight: 700; margin-bottom: 16px; color: #1e3a5f; }
+    .split-text p { font-size: 15px; color: #64748b; line-height: 1.7; margin-bottom: 12px; }
+    .split-text ul { padding-left: 20px; color: #64748b; font-size: 15px; line-height: 2; }
+    .split-img { flex: 1; }
+    .split-img img { width: 100%; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+    .split-img-placeholder {
+      width: 100%; height: 320px;
+      background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+      border-radius: 12px; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      color: #94a3b8; font-size: 14px; gap: 8px;
+      border: 2px dashed #94a3b8;
+    }
+    .split-img-placeholder .icon { font-size: 40px; }
+
+    /* Logo no nav */
+    .nav-logo-img { height: 36px; width: auto; }
+
+    @media (max-width: 768px) {
+      .split-section { flex-direction: column !important; padding: 48px 20px; }
+      .hero-screenshot { padding: 32px 20px 0; }
+      .hero-screenshot-placeholder { height: 220px; }
+    }
+
     .stats {
       background: #fff; padding: 48px 40px;
       display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;
@@ -107,7 +158,11 @@
 <body>
 
 <nav>
-  <div class="nav-logo">SI<span>GE</span></div>
+  <div style="display:flex;align-items:center;gap:14px;">
+    <!-- LOGO: substitua o src abaixo pelo caminho da sua logo, ex: src="images/logo.png" -->
+    <!-- <img src="images/logo.png" alt="Logo" class="nav-logo-img"> -->
+    <div class="nav-logo">SI<span>GE</span></div>
+  </div>
   <a href="#contato" class="nav-btn">Solicitar Demo</a>
 </nav>
 
@@ -118,6 +173,17 @@
   <div class="hero-btns">
     <a href="#contato" class="btn-primary">Solicitar Demonstração Gratuita</a>
     <a href="#funcionalidades" class="btn-outline">Ver Funcionalidades</a>
+  </div>
+</div>
+
+<!-- SCREENSHOT DO SISTEMA: coloque um print do dashboard aqui -->
+<!-- Para usar: faça upload de "images/dashboard.png" no GitHub e descomente a linha do <img> abaixo -->
+<div class="hero-screenshot">
+  <!-- <img src="images/dashboard.png" alt="Dashboard SIGE" /> -->
+  <div class="hero-screenshot-placeholder">
+    <div class="icon">🖥️</div>
+    <strong>Espaço para Screenshot do Sistema</strong>
+    <span>Faça upload de "images/dashboard.png" no GitHub e substitua este bloco pelo &lt;img&gt; descomentado acima</span>
   </div>
 </div>
 
@@ -180,6 +246,55 @@
   </div>
 </section>
 
+<!-- SEÇÃO COM IMAGEM LATERAL: screenshot de frequência ou notas -->
+<div style="background:#fff;">
+  <div class="split-section">
+    <div class="split-text">
+      <h2>📋 Diário Digital Completo</h2>
+      <p>Professores registram frequência e notas diretamente pelo celular ou computador, com sincronização em tempo real para a coordenação e secretaria.</p>
+      <ul>
+        <li>Frequência por turma e disciplina</li>
+        <li>Lançamento de notas por bimestre</li>
+        <li>Conteúdo ministrado e habilidades BNCC</li>
+        <li>Bloqueio automático fora do prazo</li>
+      </ul>
+    </div>
+    <div class="split-img">
+      <!-- IMAGEM: faça upload de "images/frequencia.png" no GitHub -->
+      <!-- <img src="images/frequencia.png" alt="Frequência Digital SIGE" /> -->
+      <div class="split-img-placeholder">
+        <div class="icon">📋</div>
+        <strong>Screenshot: Frequência / Notas</strong>
+        <span>Substitua pelo &lt;img src="images/frequencia.png"&gt;</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="background:#f1f5f9;">
+  <div class="split-section reverse">
+    <div class="split-text">
+      <h2>📊 Painel de BI e Indicadores</h2>
+      <p>Gestores municipais acompanham em tempo real os indicadores de toda a rede: taxas de aprovação, frequência, evolução por escola e muito mais.</p>
+      <ul>
+        <li>Visão consolidada por município</li>
+        <li>Filtros por escola, turma e disciplina</li>
+        <li>Gráficos e relatórios exportáveis</li>
+        <li>Alertas automáticos de baixo desempenho</li>
+      </ul>
+    </div>
+    <div class="split-img">
+      <!-- IMAGEM: faça upload de "images/bi.png" no GitHub -->
+      <!-- <img src="images/bi.png" alt="BI e Indicadores SIGE" /> -->
+      <div class="split-img-placeholder">
+        <div class="icon">📊</div>
+        <strong>Screenshot: Painel de BI</strong>
+        <span>Substitua pelo &lt;img src="images/bi.png"&gt;</span>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="roles-bg">
   <section>
     <div class="section-title">Acesso para todos os perfis</div>
@@ -235,8 +350,6 @@
   <div class="footer-logo">SI<span>GE</span></div>
   <p>Sistema Integrado de Gestão Escolar</p>
   <p style="margin-top:8px;">Desenvolvido para Secretarias Municipais de Educação brasileiras</p>
-   <p>Contato: (92)98852-4821</p>
-   <p>email: mundodigital.pin@gmail.com</p>
 </footer>
 
 </body>
